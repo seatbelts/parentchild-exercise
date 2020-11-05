@@ -25,6 +25,6 @@ export class DashboardComponent implements OnInit {
   }
 
   navigateFn(id) {
-    // this.router.navigateByUrl('/detail/');
+    this.router.navigateByUrl('/detail/' + id);
   }
 }
