@@ -6,16 +6,17 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./hero-card.component.css']
 })
 export class HeroCardComponent implements OnInit {
-  hero = {
-    name: 'lorem',
-    id: 12
-   };
+  @Input() hero;
+
+  @Output() outputEmitter = new EventEmitter();
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
-  returnFn() {}
+  returnFn() {
+    this.outputEmitter.emit(this.hero.id);
+  }
 
 }
